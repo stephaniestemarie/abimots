@@ -57,7 +57,7 @@ class Vocabulaire {
 
     choisirNumero(){
        
-        let numero = Math.floor(Math.random() * this.positionMots.length) + 1;
+        let numero = Math.floor(Math.random() * this.positionMots.length - 1) + 1;
         console.log(this.positionMots)
         console.log(numero)
         console.log(this.positionMots[numero])
@@ -93,7 +93,7 @@ class Vocabulaire {
     faireEcranJeu() {
            
         let listeInput = this.faireInput();   
-
+        this.bonneLettre.length = 0
         
         this.ecranJeu.innerHTML = ` <div class="flex gap-5 items-center justify-center" >
         <button id="audioBtn"><img class="w-[50px] h-[50px] bg-gray-50 p-2 rounded-md cursor-pointer border-2 border-gray-900" src="./image/volume.jpg" alt="" srcset=""></button>
@@ -109,6 +109,7 @@ class Vocabulaire {
         document.querySelectorAll(".input").forEach(item => {
             item.addEventListener("input", () =>{
                 let postion = (item.getAttribute("data-position"))
+                
                 let tab =`input${parseInt(postion) + 1}`;
                 if (postion < this.motChoisi.length - 1) {
                     document.getElementById(tab).focus();
@@ -125,7 +126,7 @@ class Vocabulaire {
         document.querySelector("#validerBtn").addEventListener("click", () =>{
 
             let inputsArray = [];            
-            this.bonneLettre.length = 0
+            
     
             document.querySelectorAll(".input").forEach(item => {
                 inputsArray.push(item.value)                
