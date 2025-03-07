@@ -17,8 +17,18 @@ class Vocabulaire {
         [12, "magie"],
         [13, "figure"],
         [14, "géant"],
+        [15, "gauche"],
+        [16, "courage"],
+        [17, "grenouille"],
+        [18, "danger"],
+        [19, "dangereux"],
+        [20, "vague"],
+        [21, "garage"],
+        [22, "grange"],
+        [23, "gorge"],
+
     ]);
-    quantiteMots = this.listeMots.size;
+    positionMots = Array.from({length: this.listeMots.size}, (_, i) => i + 1)
     num = this.choisirNumero()
     motChoisi = this.choisirMot();
     ecranJeu = document.getElementById("ecranJeu");   
@@ -45,55 +55,26 @@ class Vocabulaire {
     }
 
 
-    toString() {
-
-        for (const element of this.listeMots) {
-            console.log(element);
-        }
-
-    }
-
     choisirNumero(){
-        let numero = Math.floor(Math.random() * this.quantiteMots) + 1;
-        return numero
+       
+        let numero = Math.floor(Math.random() * this.positionMots.length - 1) + 1;
+        console.log(this.positionMots)
+        console.log(numero)
+        console.log(this.positionMots[numero])
+
+        return this.positionMots[numero]
     }
 
     choisirMot() {       
         return this.listeMots.get(this.num);
     }
 
-    autotab() {
 
-        let current = this.getAttribute("id")
-        console.log(current)
-        // if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) 
-        // {
-        //     to.focus() 
-        // }
-    }
-
-    
     faireInput() {
 
         let inputsBox = `<div class=" w-full h-1/4 p-5 flex justify-center items-center gap-5">`;
-        
-    
-        for (let i = 0; i < this.motChoisi.length ; i++) {
-            inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input${i}" data-position="${i}" class="input h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
-        }
-    
-        inputsBox += "</div>`"
 
-        
-    
-        return inputsBox
-    }
 
-    faireInput(listePosition) {
-
-        let inputsBox = `<div class=" w-full h-1/4 p-5 flex justify-center items-center gap-5">`;
-        
-    
         for (let i = 0; i < this.motChoisi.length ; i++) {
             if (this.bonneLettre.includes(i)){
                 inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input${i}" data-position="${i}" value="${this.motChoisi[i]}" class="input h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
@@ -111,9 +92,8 @@ class Vocabulaire {
 
     faireEcranJeu() {
            
-
-        let listeInput = this.faireInput(this.motChoisi);   
-
+        let listeInput = this.faireInput();   
+        this.bonneLettre.length = 0
         
         this.ecranJeu.innerHTML = ` <div class="flex gap-5 items-center justify-center" >
         <button id="audioBtn"><img class="w-[50px] h-[50px] bg-gray-50 p-2 rounded-md cursor-pointer border-2 border-gray-900" src="./image/volume.jpg" alt="" srcset=""></button>
@@ -129,6 +109,7 @@ class Vocabulaire {
         document.querySelectorAll(".input").forEach(item => {
             item.addEventListener("input", () =>{
                 let postion = (item.getAttribute("data-position"))
+                
                 let tab =`input${parseInt(postion) + 1}`;
                 if (postion < this.motChoisi.length - 1) {
                     document.getElementById(tab).focus();
@@ -144,17 +125,20 @@ class Vocabulaire {
 
         document.querySelector("#validerBtn").addEventListener("click", () =>{
 
-            let inputsArray = [];
+            let inputsArray = [];            
+            
     
             document.querySelectorAll(".input").forEach(item => {
                 inputsArray.push(item.value)                
             });
 
-            console.log(inputsArray);
+            for (let i = 0; i < this.motChoisi.length + 1; i++) {
 
-            for (let i = 0; i < this.motChoisi.length ; i++) {
-
-                if (this.motChoisi[i] === inputsArray[i] && i == this.motChoisi.length - 1) {
+                if (this.motChoisi[i] === inputsArray[i]) {
+                    this.bonneLettre.push(i);
+                }
+                
+                if (this.bonneLettre.length == this.motChoisi.length) {
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
                         <img class="w-[100px] h-[100px]" src="./image/ballongauche.png" alt="fillette qui écrit" srcset="">
@@ -162,18 +146,16 @@ class Vocabulaire {
                         <img class="w-[100px] h-[100px]" src="./image/ballondroite.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     setTimeout(() => {
+                        let positionASupprimer = this.positionMots.indexOf(this.num);
+                        this.positionMots.splice(positionASupprimer, 1)
                         this.num = this.choisirNumero()
                         this.motChoisi = this.choisirMot()
                         this.bonneLettre.length = 0
                         this.faireEcranJeu()
                     }, 2000);
-                    
-                    
-
-                } else if (this.motChoisi[i] === inputsArray[i]) {
-                    console.log("oui")
-                    this.bonneLettre.push(i);
-                }else {
+                }
+                
+                if (i === this.motChoisi.length - 1 && this.bonneLettre.length !== this.motChoisi.length){
                     
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
@@ -182,7 +164,7 @@ class Vocabulaire {
                         <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     setTimeout(() => {
-                        this.faireEcranJeu(this.bonneLettre)
+                        this.faireEcranJeu()
                     }, 2000);
                     break
                 }
