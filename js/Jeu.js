@@ -14,6 +14,7 @@ class Jeu {
     num = this.choisirNumero()
     motChoisi = this.choisirMot();
     ecranJeu = document.getElementById("ecranJeu");   
+    bonneLettre = [];
 
     constructor() {
 
@@ -80,6 +81,26 @@ class Jeu {
         return inputsBox
     }
 
+    faireInput(listePosition) {
+
+        let inputsBox = `<div class=" w-full h-1/4 p-5 flex justify-center items-center gap-5">`;
+        
+    
+        for (let i = 0; i < this.motChoisi.length ; i++) {
+            if (this.bonneLettre.includes(i)){
+                inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input${i}" data-position="${i}" value="${this.motChoisi[i]}" class="input h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
+            } else {
+                inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input${i}" data-position="${i}" class="input h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
+            }
+        }
+    
+        inputsBox += "</div>`"
+
+        
+    
+        return inputsBox
+    }
+
     faireEcranJeu() {
            
 
@@ -135,6 +156,7 @@ class Jeu {
                     setTimeout(() => {
                         this.num = this.choisirNumero()
                         this.motChoisi = this.choisirMot()
+                        this.bonneLettre.length = 0
                         this.faireEcranJeu()
                     }, 2000);
                     
@@ -142,6 +164,7 @@ class Jeu {
 
                 } else if (this.motChoisi[i] === inputsArray[i]) {
                     console.log("oui")
+                    this.bonneLettre.push(i);
                 }else {
                     
                     this.ecranJeu.innerHTML = `
@@ -151,7 +174,7 @@ class Jeu {
                         <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     setTimeout(() => {
-                        this.faireEcranJeu()
+                        this.faireEcranJeu(this.bonneLettre)
                     }, 2000);
                     break
                 }
