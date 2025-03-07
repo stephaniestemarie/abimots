@@ -17,6 +17,16 @@ class Vocabulaire {
         [12, "magie"],
         [13, "figure"],
         [14, "géant"],
+        [15, "gauche"],
+        [16, "courage"],
+        [17, "grenouille"],
+        [18, "danger"],
+        [19, "dangereux"],
+        [20, "vague"],
+        [21, "garage"],
+        [22, "grange"],
+        [23, "gorge"],
+
     ]);
     quantiteMots = this.listeMots.size;
     num = this.choisirNumero()
@@ -111,6 +121,7 @@ class Vocabulaire {
 
     faireEcranJeu() {
            
+        console.log(this.motChoisi)
 
         let listeInput = this.faireInput(this.motChoisi);   
 
