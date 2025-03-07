@@ -53,6 +53,16 @@ class Jeu {
         return this.listeMots.get(this.num);
     }
 
+    autotab() {
+
+        let current = this.getAttribute("id")
+        console.log(current)
+        // if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) 
+        // {
+        //     to.focus() 
+        // }
+    }
+
     
     faireInput() {
 
@@ -60,12 +70,12 @@ class Jeu {
         
     
         for (let i = 0; i < this.motChoisi.length ; i++) {
-            inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input" class="h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
+            inputsBox += `  <div class=" h-16 w-16 bg-sky-950"> <input id="input${i}" data-position="${i}" class="input h-full w-full text-4xl text-center" type="text" maxlength="1"></div>`
         }
     
         inputsBox += "</div>`"
 
-       
+        
     
         return inputsBox
     }
@@ -86,6 +96,18 @@ class Jeu {
         this.ecranJeu.innerHTML += `${listeInput}`;        
         this.ecranJeu.innerHTML += `<button id="validerBtn" class="mt-5 pl-10 pr-10 p-2 bg-gray-900 text-white text-xl border border-sky-500 rounded-full">Confirmer</button>`;
         
+
+        document.querySelectorAll(".input").forEach(item => {
+            item.addEventListener("input", () =>{
+                let postion = (item.getAttribute("data-position"))
+                let tab =`input${parseInt(postion) + 1}`;
+                if (postion < this.motChoisi.length - 1) {
+                    document.getElementById(tab).focus();
+                }
+            })             
+        });
+        
+
         document.querySelector("#audioBtn").addEventListener("click", () =>{
             let son = document.getElementById("audio");
             son.play()
@@ -95,11 +117,8 @@ class Jeu {
 
             let inputsArray = [];
     
-            document.querySelectorAll("#input").forEach(item => {
-                inputsArray.push(item.value)
-
-
-                
+            document.querySelectorAll(".input").forEach(item => {
+                inputsArray.push(item.value)                
             });
 
             console.log(inputsArray);
@@ -107,7 +126,12 @@ class Jeu {
             for (let i = 0; i < this.motChoisi.length ; i++) {
 
                 if (this.motChoisi[i] === inputsArray[i] && i == this.motChoisi.length - 1) {
-                    this.ecranJeu.innerHTML = "BRAVO";
+                    this.ecranJeu.innerHTML = `
+                    <div class="flex gap-5 items-center justify-center bg-white">
+                        <img class="w-[100px] h-[100px]" src="./image/ballongauche.png" alt="fillette qui écrit" srcset="">
+                        <h1>BRAVO!!!</h1>
+                        <img class="w-[100px] h-[100px]" src="./image/ballondroite.png" alt="fillette qui écrit" srcset="">
+                    </div>`;
                     setTimeout(() => {
                         this.num = this.choisirNumero()
                         this.motChoisi = this.choisirMot()
@@ -120,7 +144,12 @@ class Jeu {
                     console.log("oui")
                 }else {
                     
-                    this.ecranJeu.innerHTML = "Non";
+                    this.ecranJeu.innerHTML = `
+                    <div class="flex gap-5 items-center justify-center bg-white">
+                        <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
+                        <h1>Essaie encore</h1>
+                        <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
+                    </div>`;
                     setTimeout(() => {
                         this.faireEcranJeu()
                     }, 2000);
