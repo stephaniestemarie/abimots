@@ -1,14 +1,13 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./js/global.js"></script>
-  <script src="./js/Vocabulaire.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Abimots</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Verbe</title>
 </head>
-<body class="bg-sky-950" onload="chargerJeu()">
+<body class="bg-sky-950" onload="">
     <nav class="bg-gray-900 shadow-lg shadow-blue-300">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
@@ -37,13 +36,13 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex shrink-0 items-center">
-                <img class="h-8 w-auto" src="./image/soleil.jpg" alt="Your Company">
+                <img class="h-8 w-auto" src="../image/soleil.jpg" alt="Your Company">
               </div>
               <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="./index.html" class="rounded-md px-3 py-2 text-sm font-medium text-white bg-gray-700" aria-current="page">Vocabulaire</a>
-                  <a href="./page/verbe.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Verbe</a>
+                  <a href="../index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" >Vocabulaire</a>
+                  <a href="./verbe.html" class="rounded-md px-3 py-2 text-sm font-medium text-white bg-gray-700" aria-current="page">Verbe</a>
                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 3</a>
                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 4</a>
                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 5</a>
@@ -89,8 +88,8 @@
         <div class="hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Vocabulaire</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 2</a>
+            <a href="../index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Vocabulaire</a>
+            <a href="./verbe.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Verbe</a>
             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 3</a>
             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 4</a>
             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jeu 5</a>
@@ -122,5 +121,6 @@
           
         <!-- ... -->
       </div>
+    
 </body>
 </html>

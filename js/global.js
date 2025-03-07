@@ -2,7 +2,7 @@
 
 let chargerJeu = () => {
     
-   const Abimot = new Jeu();
+   const Abimot = new Vocabulaire();
    Abimot.faireEcranJeu() 
    
    

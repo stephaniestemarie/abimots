@@ -1,6 +1,6 @@
 "use strict";
 
-class Jeu {
+class Vocabulaire {
 
     listeMots = new Map([
         [1, "soleil"],
@@ -8,7 +8,15 @@ class Jeu {
         [3, "automne"],
         [4, "autobus"],
         [5, "ballon"],
-        [6, "serpent"]
+        [6, "serpent"],
+        [7, "ange"],
+        [8, "dragon"],
+        [9, "gentil"],
+        [10, "gentille"],
+        [11, "légume"],
+        [12, "magie"],
+        [13, "figure"],
+        [14, "géant"],
     ]);
     quantiteMots = this.listeMots.size;
     num = this.choisirNumero()
