@@ -52,21 +52,18 @@
     {
        "semaineId": 2,
        "liste": [
-            { "id": 1, "mot": "bol"},
-            { "id": 2, "mot": "défi" },
-            { "id": 3, "mot": "or" },
-            { "id": 4, "mot": "parmi" },
-            { "id": 5, "mot": "partir" },
-            { "id": 6, "mot": "sol" },
-            { "id": 7, "mot": "sud" },
-            { "id": 8, "mot": "bon" },
-            { "id": 9, "mot": "dragon" },
-            { "id": 10, "mot": "pardon" },
-            { "id": 11, "mot": "retour" },
-            { "id": 12, "mot": "salon" },
-            { "id": 13, "mot": "selon" },
-            { "id": 14, "mot": "sinon" },
-            { "id": 15, "mot": "tour" }
+            { "id": 1, "mot": "boule"},
+            { "id": 2, "mot": "envie" },
+            { "id": 3, "mot": "forme" },
+            { "id": 4, "mot": "foule" },
+            { "id": 5, "mot": "mode" },
+            { "id": 6, "mot": "nu" },
+            { "id": 7, "mot": "nue" },
+            { "id": 8, "mot": "pire" },
+            { "id": 9, "mot": "roue" },
+            { "id": 10, "mot": "sortie" },
+            { "id": 11, "mot": "soupe" },
+            { "id": 12, "mot": "vide" }
        ]
     },
 
