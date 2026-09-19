@@ -54,7 +54,7 @@ class Vocabulaire {
         this.listeMots = value;
     }
 
-
+    // Choisir un nombre au hasard parmis ceux dans la liste de mot 
     choisirNumero(){
        
         let numero = Math.floor(Math.random() * this.positionMots.length - 1) + 1;
@@ -65,11 +65,12 @@ class Vocabulaire {
         return this.positionMots[numero]
     }
 
+    //Choisir le mot associé au nombre déterminé
     choisirMot() {       
         return this.listeMots.get(this.num);
     }
 
-
+    //Faire les carré réponse en fonction du mot choisi
     faireInput() {
 
         let inputsBox = `<div class=" w-full h-1/4 p-5 flex justify-center items-center gap-5">`;
@@ -89,6 +90,7 @@ class Vocabulaire {
     
         return inputsBox
     }
+
 
     faireEcranJeu() {
            
@@ -117,12 +119,13 @@ class Vocabulaire {
             })             
         });
         
-
+        //faire jouer le son en cliquant sur le bouton
         document.querySelector("#audioBtn").addEventListener("click", () =>{
             let son = document.getElementById("audio");
             son.play()
         })
 
+        //vérifier la réponse en cliquant sur valider
         document.querySelector("#validerBtn").addEventListener("click", () =>{
 
             let inputsArray = [];            
@@ -133,11 +136,13 @@ class Vocabulaire {
             });
 
             for (let i = 0; i < this.motChoisi.length + 1; i++) {
-
+                //Si la lettre entrée correspond à la lettre du mot
                 if (this.motChoisi[i] === inputsArray[i]) {
+                    //ajoute dans la liste bonne lettre pour qu'elle reste dans le jeu
                     this.bonneLettre.push(i);
                 }
                 
+                // lorsque toutes les lettre sont bonnes
                 if (this.bonneLettre.length == this.motChoisi.length) {
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
@@ -145,6 +150,8 @@ class Vocabulaire {
                         <h1>BRAVO!!!</h1>
                         <img class="w-[100px] h-[100px]" src="./image/ballondroite.png" alt="fillette qui écrit" srcset="">
                     </div>`;
+                    
+                    //passer au mot suivant lorsque bonne réponse
                     setTimeout(() => {
                         let positionASupprimer = this.positionMots.indexOf(this.num);
                         this.positionMots.splice(positionASupprimer, 1)
@@ -155,8 +162,10 @@ class Vocabulaire {
                     }, 2000);
                 }
                 
+                //Si réponse incorrect
                 if (i === this.motChoisi.length - 1 && this.bonneLettre.length !== this.motChoisi.length){
                     
+                    //message réponse incorrect 
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
                         <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
