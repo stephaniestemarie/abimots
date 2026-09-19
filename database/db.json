@@ -1,6 +1,6 @@
 [
     {
-       "semaine": 1,
+       "semaineId": 0,
        "liste": [
             { "id": 1, "mot": "soleil"},
             { "id": 2, "mot": "auto" },
@@ -25,6 +25,90 @@
             { "id": 21, "mot": "garage" },
             { "id": 22, "mot": "grange" },
             { "id": 23, "mot": "gorge" }
+       ]
+    },
+
+    {
+       "semaineId": 1,
+       "liste": [
+            { "id": 1, "mot": "bol"},
+            { "id": 2, "mot": "défi" },
+            { "id": 3, "mot": "or" },
+            { "id": 4, "mot": "parmi" },
+            { "id": 5, "mot": "partir" },
+            { "id": 6, "mot": "sol" },
+            { "id": 7, "mot": "sud" },
+            { "id": 8, "mot": "bon" },
+            { "id": 9, "mot": "dragon" },
+            { "id": 10, "mot": "pardon" },
+            { "id": 11, "mot": "retour" },
+            { "id": 12, "mot": "salon" },
+            { "id": 13, "mot": "selon" },
+            { "id": 14, "mot": "sinon" },
+            { "id": 15, "mot": "tour" }
+       ]
+    },
+
+    {
+       "semaineId": 2,
+       "liste": [
+            { "id": 1, "mot": "bol"},
+            { "id": 2, "mot": "défi" },
+            { "id": 3, "mot": "or" },
+            { "id": 4, "mot": "parmi" },
+            { "id": 5, "mot": "partir" },
+            { "id": 6, "mot": "sol" },
+            { "id": 7, "mot": "sud" },
+            { "id": 8, "mot": "bon" },
+            { "id": 9, "mot": "dragon" },
+            { "id": 10, "mot": "pardon" },
+            { "id": 11, "mot": "retour" },
+            { "id": 12, "mot": "salon" },
+            { "id": 13, "mot": "selon" },
+            { "id": 14, "mot": "sinon" },
+            { "id": 15, "mot": "tour" }
+       ]
+    },
+
+    {
+       "semaineId": 3,
+       "liste": [
+            { "id": 1, "mot": "aide"},
+            { "id": 2, "mot": "aucun" },
+            { "id": 3, "mot": "double" },
+            { "id": 4, "mot": "doute" },
+            { "id": 5, "mot": "garde" },
+            { "id": 6, "mot": "grave" },
+            { "id": 7, "mot": "grotte" },
+            { "id": 8, "mot": "larme" },
+            { "id": 9, "mot": "meuble" },
+            { "id": 10, "mot": "plume" },
+            { "id": 11, "mot": "proche" },
+            { "id": 12, "mot": "sable" },
+            { "id": 13, "mot": "utile" },
+            { "id": 14, "mot": "aucune" }
+       ]
+    },
+
+
+{
+       "semaineId": 4,
+       "liste": [
+            { "id": 1, "mot": "chapitre"},
+            { "id": 2, "mot": "colère" },
+            { "id": 3, "mot": "corde" },
+            { "id": 4, "mot": "élire" },
+            { "id": 5, "mot": "laine" },
+            { "id": 6, "mot": "magnifique" },
+            { "id": 7, "mot": "promenade" },
+            { "id": 8, "mot": "pupitre" },
+            { "id": 9, "mot": "pur" },
+            { "id": 10, "mot": "ramener" },
+            { "id": 11, "mot": "refaire" },
+            { "id": 12, "mot": "sourire" },
+            { "id": 13, "mot": "statue" },
+            { "id": 14, "mot": "unique" },
+            { "id": 15, "mot": "pure" }
        ]
     }
 ]

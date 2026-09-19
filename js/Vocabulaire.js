@@ -1,41 +1,17 @@
 "use strict";
 
 class Vocabulaire {
-
-    listeMots = new Map([
-        [1, "soleil"],
-        [2, "auto"],
-        [3, "automne"],
-        [4, "autobus"],
-        [5, "ballon"],
-        [6, "serpent"],
-        [7, "ange"],
-        [8, "dragon"],
-        [9, "gentil"],
-        [10, "gentille"],
-        [11, "légume"],
-        [12, "magie"],
-        [13, "figure"],
-        [14, "géant"],
-        [15, "gauche"],
-        [16, "courage"],
-        [17, "grenouille"],
-        [18, "danger"],
-        [19, "dangereux"],
-        [20, "vague"],
-        [21, "garage"],
-        [22, "grange"],
-        [23, "gorge"],
-
-    ]);
-    positionMots = Array.from({length: this.listeMots.size}, (_, i) => i + 1)
-    num = this.choisirNumero()
-    motChoisi = this.choisirMot();
+    listeMots = new Map();
+    semaine = 0;
+    positionMots = new Array();
+    num;
+    motChoisi = "soleil";
     ecranJeu = document.getElementById("ecranJeu");   
     bonneLettre = [];
 
-    constructor() {
-
+    constructor(semaine) {
+        this.semaine = semaine;
+        console.log(this.semaine);
     }
 
     get listeMots() {
@@ -54,13 +30,38 @@ class Vocabulaire {
         this.listeMots = value;
     }
 
+    //Charger la liste de mot de la semaine
+     async chargerListeMots() {
+        const response = await fetch("../database/db.json");
+        const donnees = await response.json();
+
+        console.log(donnees);
+
+        const semaine1 = donnees.find(
+            element => element.semaineId === this.semaine
+        );
+
+        this.listeMots = new Map(
+            semaine1.liste.map(element => [
+                element.id,
+                element.mot
+            ])
+        );
+
+        this.positionMots = Array.from({length: this.listeMots.size}, (_, i) => i + 1)
+        console.log(this.positionMots);
+
+        this.num = this.choisirNumero()
+        this.motChoisi = this.choisirMot()
+        console.log(this.num)
+        console.log(this.motChoisi)
+
+    }
+
     // Choisir un nombre au hasard parmis ceux dans la liste de mot 
     choisirNumero(){
        
         let numero = Math.floor(Math.random() * this.positionMots.length - 1) + 1;
-        console.log(this.positionMots)
-        console.log(numero)
-        console.log(this.positionMots[numero])
 
         return this.positionMots[numero]
     }
@@ -73,6 +74,7 @@ class Vocabulaire {
     //Faire les carré réponse en fonction du mot choisi
     faireInput() {
 
+        
         let inputsBox = `<div class=" w-full h-1/4 p-5 flex justify-center items-center gap-5">`;
 
 
