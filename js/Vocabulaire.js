@@ -32,7 +32,7 @@ class Vocabulaire {
 
     //Charger la liste de mot de la semaine
      async chargerListeMots() {
-        const response = await fetch("../database/db.json");
+        const response = await fetch("./../../database/quatreDb.json");
         const donnees = await response.json();
 
         console.log(donnees);
@@ -100,9 +100,9 @@ class Vocabulaire {
         this.bonneLettre.length = 0
         
         this.ecranJeu.innerHTML = ` <div class="flex gap-5 items-center justify-center" >
-        <button id="audioBtn"><img class="w-[50px] h-[50px] bg-gray-50 p-2 rounded-md cursor-pointer border-2 border-gray-900" src="./image/volume.jpg" alt="" srcset=""></button>
-        <audio id="audio" src="./audio/${this.motChoisi}.mp3"></audio>
-        <img class="w-[250px] h-[250px] mr-[50px]" src="./image/${this.motChoisi}.jpg" alt="" srcset="">
+        <button id="audioBtn"><img class="w-[50px] h-[50px] bg-gray-50 p-2 rounded-md cursor-pointer border-2 border-gray-900" src="../../image/volume.jpg" alt="" srcset=""></button>
+        <audio id="audio" src="../../audio/${this.motChoisi}.mp3"></audio>
+        <img class="w-[250px] h-[250px] mr-[50px]" src="../../image/${this.motChoisi}.jpg" alt="" srcset="">
         </div>            
         `;
         
@@ -148,9 +148,9 @@ class Vocabulaire {
                 if (this.bonneLettre.length == this.motChoisi.length) {
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
-                        <img class="w-[100px] h-[100px]" src="./image/ballongauche.png" alt="fillette qui écrit" srcset="">
+                        <img class="w-[100px] h-[100px]" src="../../image/ballongauche.png" alt="fillette qui écrit" srcset="">
                         <h1>BRAVO!!!</h1>
-                        <img class="w-[100px] h-[100px]" src="./image/ballondroite.png" alt="fillette qui écrit" srcset="">
+                        <img class="w-[100px] h-[100px]" src="../../image/ballondroite.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     
                     //passer au mot suivant lorsque bonne réponse
@@ -170,9 +170,9 @@ class Vocabulaire {
                     //message réponse incorrect 
                     this.ecranJeu.innerHTML = `
                     <div class="flex gap-5 items-center justify-center bg-white">
-                        <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
+                        <img class="w-[100px] h-[100px]" src="../../image/oups.png" alt="fillette qui écrit" srcset="">
                         <h1>Essaie encore</h1>
-                        <img class="w-[100px] h-[100px]" src="./image/oups.png" alt="fillette qui écrit" srcset="">
+                        <img class="w-[100px] h-[100px]" src="../../image/oups.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     setTimeout(() => {
                         this.faireEcranJeu()
