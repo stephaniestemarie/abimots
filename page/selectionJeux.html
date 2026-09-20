@@ -12,14 +12,15 @@
 
         <a class="col-span-3 bg-red-500 flex items-center justify-center">
              <div id="titre"></div>
+             <div id="choix"></div>
           <h1 class="text-center text-3xl font-bold">Choisi ton jeu</h1>
         </a>
 
         <a class="bg-yellow-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-          hover:brightness-110" href="./jeux/vocabulaire.html" jeu="Vocabulaire">
+          hover:brightness-110" href="./jeux/semaine.html" jeu="Vocabulaire">
           <h2 class="text-center text-xl ">Vocabulaire </h2>
         </a>
-        <a class="bg-purple-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+        <!-- <a class="bg-purple-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
         hover:brightness-110" href="./page/selectionJeux.html?id=math" jeu="Verbe">
           <h2 class="text-center text-xl ">Verbe  </h2>
         </a>
@@ -30,7 +31,7 @@
 
         <a class="bg-orange-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
         hover:brightness-110" href="./page/selectionJeux.html?id=uniso" jeu="general">
-          <h2 class="text-center text-xl">Connaissances générales</h2>
+          <h2 class="text-center text-xl">Connaissances générales</h2> -->
         </a>
         <!-- <a class="bg-cyan-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
         hover:brightness-110" href="./page/selectionMatiere.html?id=5" id="5">
@@ -50,23 +51,24 @@
 
     console.log(annee); // "1"
     console.log(matiere);
-    // const titre = document.getElementById("titre");
+    const titre = document.getElementById("titre");
+    const choix = document.getElementById("choix");
 
-    // if (id == 1) {
-    //     titre.textContent = "1ère année";
-    // } else if (id == 2) {
-    //     titre.textContent = "2ème année";
-    // } else if (id == 3) {
-    //     titre.textContent = "3ème année";
-    // } else if (id == 4) {
-    //     titre.textContent = "4ème année";
-    // }else if (id == 5) {
-    //     titre.textContent = "5ème année";
-    // }else if (id == 6) {
-    //     titre.textContent = "6ème année";
-    // }else { titre.textContent = "erreur"}
+    if (annee == 1) {
+        titre.textContent = "1ère année";
+    } else if (annee == 2) {
+        titre.textContent = "2ème année";
+    } else if (annee == 3) {
+        titre.textContent = "3ème année";
+    } else if (annee == 4) {
+        titre.textContent = "4ème année";
+    }else if (annee == 5) {
+        titre.textContent = "5ème année";
+    }else if (annee == 6) {
+        titre.textContent = "6ème année";
+    }else { titre.textContent = "erreur"}
 
-
+    choix.textContent = matiere;
 
 </script>
 </html>

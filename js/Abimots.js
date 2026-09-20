@@ -1,6 +1,6 @@
 "use strict";
 
-class Vocabulaire {
+class Abimots {
     listeMots = new Map();
     semaine = 0;
     positionMots = new Array();
