@@ -88,7 +88,7 @@
     },
 
 
-{
+     {
        "semaineId": 4,
        "liste": [
             { "id": 1, "mot": "chapitre"},
@@ -106,6 +106,77 @@
             { "id": 13, "mot": "statue" },
             { "id": 14, "mot": "unique" },
             { "id": 15, "mot": "pure" }
+       ]
+    },
+
+    {
+       "semaineId": 5,
+       "liste": [
+            { "id": 1, "mot": "aventure"},
+            { "id": 2, "mot": "bizarre" },
+            { "id": 3, "mot": "cachette" },
+            { "id": 4, "mot": "détective" },
+            { "id": 5, "mot": "effroyable" },
+            { "id": 6, "mot": "intrépide" },
+            { "id": 7, "mot": "lunette" },
+            { "id": 8, "mot": "mystère" },
+            { "id": 9, "mot": "nouvelle" },
+            { "id": 10, "mot": "parole" },
+            { "id": 11, "mot": "poitrine" },
+            { "id": 12, "mot": "problème" },
+            { "id": 13, "mot": "ruelle" },
+            { "id": 14, "mot": "terrible" },
+            { "id": 15, "mot": "chuchoter" },
+            { "id": 16, "mot": "laver" },
+            { "id": 17, "mot": "soupirer" }
+       ]
+    },
+
+    {
+       "semaineId": 6,
+       "liste": [
+            { "id": 1, "mot": "accord"},
+            { "id": 2, "mot": "bond" },
+            { "id": 3, "mot": "brouillard" },
+            { "id": 4, "mot": "état" },
+            { "id": 5, "mot": "fort" },
+            { "id": 6, "mot": "froid" },
+            { "id": 7, "mot": "grand" },
+            { "id": 8, "mot": "lait" },
+            { "id": 9, "mot": "nord" },
+            { "id": 10, "mot": "plat" },
+            { "id": 11, "mot": "pont" },
+            { "id": 12, "mot": "port" },
+            { "id": 13, "mot": "profond" },
+            { "id": 14, "mot": "profonde" },
+            { "id": 15, "mot": "regard" }
+       ]
+    },
+
+    {
+       "semaineId": 7,
+       "liste": [
+            { "id": 1, "mot": "amusant"},
+            { "id": 2, "mot": "amusante" },
+            { "id": 3, "mot": "biscuit" },
+            { "id": 4, "mot": "content" },
+            { "id": 5, "mot": "contente" },
+            { "id": 6, "mot": "debout" },
+            { "id": 7, "mot": "début" },
+            { "id": 8, "mot": "débuter" },
+            { "id": 9, "mot": "différent" },
+            { "id": 10, "mot": "différente" },
+            { "id": 11, "mot": "endroit" },
+            { "id": 12, "mot": "front" },
+            { "id": 13, "mot": "soldat" },
+            { "id": 14, "mot": "soldate" },
+            { "id": 15, "mot": "sort" },
+            { "id": 16, "mot": "suivant" },
+            { "id": 17, "mot": "suivante" },
+            { "id": 18, "mot": "toit" },
+            { "id": 19, "mot": "tout" },
+            { "id": 20, "mot": "vivant" },
+            { "id": 21, "mot": "vivante" }
        ]
     }
 ]
