@@ -1,11 +1,18 @@
-const App = new Application();
 
+function demarrerApp() {
 
-async function rediriger(){
-
-   
+   console.log(`je suis dans demarrer app`)
+   const App = new Application();
+   App.faireEcranAccueil();  
 
 }
+
+
+// async function rediriger(){
+
+
+
+// }
 
 
 

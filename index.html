@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page d'accueil</title>
    <script src="https://cdn.tailwindcss.com"></script>
+   <script src="./js/global.js"></script>
 </head>
-<body>
+<body onload="demarrerApp()">
+
+  <div id="accueil">
+
+  </div>
  
-     <div class="grid h-screen grid-cols-3 grid-rows-3 gap-5 p-4">
+     <!-- <div class="grid h-screen grid-cols-3 grid-rows-3 gap-5 p-4">
 
         <a class="col-span-3 bg-red-500 flex items-center justify-center">
           <h1 class="text-center text-3xl font-bold">La fabrique à génie</h1>
@@ -40,7 +45,7 @@
           <h2 class="text-center text-xl ">6ème année  </h2>
         </a>
 
-    </div>
+    </div> -->
 
 
     <!-- DEUXIÈME GRILLE -->
@@ -63,7 +68,40 @@
 
 </body>
 <script>
-  
+    // const params = new URLSearchParams(window.location.search);
+    // const annee = params.get("annee");  
+
+    // console.log(annee); // "1"
+
+    // const titre = document.getElementById("titre");
+
+    // if (annee == 1) {
+    //     titre.textContent = "1ère année";
+    // } else if (annee == 2) {
+    //     titre.textContent = "2ème année";
+    // } else if (annee == 3) {
+    //     titre.textContent = "3ème année";
+    // } else if (annee == 4) {
+    //     titre.textContent = "4ème année";
+    // }else if (annee == 5) {
+    //     titre.textContent = "5ème année";
+    // }else if (annee == 6) {
+    //     titre.textContent = "6ème année";
+    // }else { titre.textContent = "erreur"}
+
+    
+    // document.getElementById("francais").href =
+    // `selectionJeux.html?annee=${annee}&matiere=francais`;
+
+    // document.getElementById("math").href =
+    // `selectionJeux.html?annee=${annee}&matiere=math`;
+
+    // document.getElementById("anglais").href =
+    // `selectionJeux.html?annee=${annee}&matiere=anglais`;
+
+    // document.getElementById("uniso").href =
+    // `selectionJeux.html?annee=${annee}&matiere=uniso`;
+    
 
 </script>
 
