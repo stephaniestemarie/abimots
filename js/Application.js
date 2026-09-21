@@ -3,13 +3,13 @@
 class Application {
 
     annee;
-    matiere;
-    jeu;
     semaine;
+    jeux;
+    score;
 
 
 
-     constructor() {
+    constructor() {
     }
 
 
@@ -48,6 +48,19 @@ class Application {
     }
 
 
-    //fonction
+    // **************************************  FONCTIONS *************************************************
+
+    // Faire écran d'accueil
+    
+
+
+    // faire jeu Abimots 
+    async chargerAbimots(semaine) {
+        const Abimot = new Abimots(semaine);
+        await Abimot.chargerListeMots()
+        Abimot.faireEcranJeu() 
+        
+    }
+
 
 }

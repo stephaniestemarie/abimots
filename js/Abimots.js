@@ -32,7 +32,7 @@ class Abimots {
 
     //Charger la liste de mot de la semaine
      async chargerListeMots() {
-        const response = await fetch("./../../database/quatreDb.json");
+        const response = await fetch("./../../database/dbQuatrieme.json");
         const donnees = await response.json();
 
         console.log(donnees);
@@ -153,15 +153,34 @@ class Abimots {
                         <img class="w-[100px] h-[100px]" src="../../image/ballondroite.png" alt="fillette qui écrit" srcset="">
                     </div>`;
                     
+                    
+                    
                     //passer au mot suivant lorsque bonne réponse
                     setTimeout(() => {
                         let positionASupprimer = this.positionMots.indexOf(this.num);
                         this.positionMots.splice(positionASupprimer, 1)
+                        if (this.positionMots.length === 0) {
+                            // Si tous les mots ont été répondus
+                                this.ecranJeu.innerHTML = `
+                                    <div class="flex gap-5 items-center justify-center bg-white">
+                                        <img class="w-[100px] h-[100px]" src="../../image/oups.png" alt="fillette qui écrit" srcset="">
+                                        <h1>Bravo! Tu as tout réussi</h1>
+                                        <img class="w-[100px] h-[100px]" src="../../image/oups.png" alt="fillette qui écrit" srcset="">
+                                    </div>`;
+                                    setTimeout(() => {
+                                        window.location.href = "../selectionJeux.html";
+                                }, 2000);
+                            }
+
+
                         this.num = this.choisirNumero()
                         this.motChoisi = this.choisirMot()
                         this.bonneLettre.length = 0
                         this.faireEcranJeu()
                     }, 2000);
+
+                    
+                    
                 }
                 
                 //Si réponse incorrect
@@ -179,7 +198,11 @@ class Abimots {
                     }, 2000);
                     break
                 }
+
+
             }
+
+            
 
         })
 
