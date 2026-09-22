@@ -16,10 +16,10 @@ function demarrerApp() {
 
 
 
-async function chargerAbimots(semaine) {
-   const Abimot = new Abimots(semaine);
-   await Abimot.chargerListeMots()
-   Abimot.faireEcranJeu() 
+// async function chargerAbimots(semaine) {
+//    const Abimot = new Abimots(semaine);
+//    await Abimot.chargerListeMots()
+//    Abimot.faireEcranJeu() 
    
-}
+// }
 

@@ -1,0 +1,64 @@
+[
+    
+    {
+       "semaineId": 1,
+       "liste": [
+            { "id": 1, "mot": "bol"},
+            { "id": 2, "mot": "défi" },
+            { "id": 3, "mot": "or" },
+            { "id": 4, "mot": "parmi" },
+            { "id": 5, "mot": "partir" },
+            { "id": 6, "mot": "sol" },
+            { "id": 7, "mot": "sud" },
+            { "id": 8, "mot": "bon" },
+            { "id": 9, "mot": "dragon" },
+            { "id": 10, "mot": "pardon" },
+            { "id": 11, "mot": "retour" },
+            { "id": 12, "mot": "salon" },
+            { "id": 13, "mot": "selon" },
+            { "id": 14, "mot": "sinon" },
+            { "id": 15, "mot": "tour" }
+       ],
+       "histoire":"Un matin, pendant une promenade avec sa classe, Léa aperçut quelque chose de magnifique au milieu du parc. C’était une grande statue représentant un mouton avec un drôle de sourire. Autour de son cou pendait une corde faite de laine blanche et pure. Intriguée, Léa s’approcha et découvrit un petit message : « Celui qui réussira à me ramener à l’école pourra élire le prochain gardien de la statue! » Léa était certaine d’avoir trouvé un trésor unique. Mais Hugo, son meilleur ami, se mit en colère. Il voulait lui aussi être le premier à rapporter la statue! De retour en classe, leur enseignante leur demanda de s’asseoir à leur pupitre. Elle ouvrit un livre à un nouveau chapitre et leur expliqua que la statue appartenait au parc. Il fallait donc la ramener exactement où ils l’avaient trouvée. Léa et Hugo décidèrent alors de refaire le chemin ensemble. Une fois la statue remise à sa place, Hugo retrouva son sourire. « Finalement, dit-il, notre promenade était vraiment spéciale! » Léa regarda le ciel d’un bleu pur et éclata de rire. Elle était heureuse d’avoir vécu une aventure aussi unique, même si elle préférait maintenant laisser cette magnifique statue là où elle devait être. Et quant à la mystérieuse corde de laine pure… personne ne sut jamais pourquoi elle était là!"
+    },
+
+    {
+       "semaineId": 2,
+       "liste": [
+            { "id": 1, "mot": "boule"},
+            { "id": 2, "mot": "envie" },
+            { "id": 3, "mot": "forme" },
+            { "id": 4, "mot": "foule" },
+            { "id": 5, "mot": "mode" },
+            { "id": 6, "mot": "nu" },
+            { "id": 7, "mot": "nue" },
+            { "id": 8, "mot": "pire" },
+            { "id": 9, "mot": "roue" },
+            { "id": 10, "mot": "sortie" },
+            { "id": 11, "mot": "soupe" },
+            { "id": 12, "mot": "vide" }
+       ],
+       "histoire":"Un matin, pendant une promenade avec sa classe, Léa aperçut quelque chose de magnifique au milieu du parc. C’était une grande statue représentant un mouton avec un drôle de sourire. Autour de son cou pendait une corde faite de laine blanche et pure. Intriguée, Léa s’approcha et découvrit un petit message : « Celui qui réussira à me ramener à l’école pourra élire le prochain gardien de la statue! » Léa était certaine d’avoir trouvé un trésor unique. Mais Hugo, son meilleur ami, se mit en colère. Il voulait lui aussi être le premier à rapporter la statue! De retour en classe, leur enseignante leur demanda de s’asseoir à leur pupitre. Elle ouvrit un livre à un nouveau chapitre et leur expliqua que la statue appartenait au parc. Il fallait donc la ramener exactement où ils l’avaient trouvée. Léa et Hugo décidèrent alors de refaire le chemin ensemble. Une fois la statue remise à sa place, Hugo retrouva son sourire. « Finalement, dit-il, notre promenade était vraiment spéciale! » Léa regarda le ciel d’un bleu pur et éclata de rire. Elle était heureuse d’avoir vécu une aventure aussi unique, même si elle préférait maintenant laisser cette magnifique statue là où elle devait être. Et quant à la mystérieuse corde de laine pure… personne ne sut jamais pourquoi elle était là!"
+    },
+
+    {
+       "semaineId": 3,
+       "liste": [
+            { "id": 1, "mot": "aide"},
+            { "id": 2, "mot": "aucun" },
+            { "id": 3, "mot": "double" },
+            { "id": 4, "mot": "doute" },
+            { "id": 5, "mot": "garde" },
+            { "id": 6, "mot": "grave" },
+            { "id": 7, "mot": "grotte" },
+            { "id": 8, "mot": "larme" },
+            { "id": 9, "mot": "meuble" },
+            { "id": 10, "mot": "plume" },
+            { "id": 11, "mot": "proche" },
+            { "id": 12, "mot": "sable" },
+            { "id": 13, "mot": "utile" },
+            { "id": 14, "mot": "aucune" }
+       ],
+       "histoire":"Un matin, pendant une promenade avec sa classe, Léa aperçut quelque chose de magnifique au milieu du parc. C’était une grande statue représentant un mouton avec un drôle de sourire. Autour de son cou pendait une corde faite de laine blanche et pure. Intriguée, Léa s’approcha et découvrit un petit message : « Celui qui réussira à me ramener à l’école pourra élire le prochain gardien de la statue! » Léa était certaine d’avoir trouvé un trésor unique. Mais Hugo, son meilleur ami, se mit en colère. Il voulait lui aussi être le premier à rapporter la statue! De retour en classe, leur enseignante leur demanda de s’asseoir à leur pupitre. Elle ouvrit un livre à un nouveau chapitre et leur expliqua que la statue appartenait au parc. Il fallait donc la ramener exactement où ils l’avaient trouvée. Léa et Hugo décidèrent alors de refaire le chemin ensemble. Une fois la statue remise à sa place, Hugo retrouva son sourire. « Finalement, dit-il, notre promenade était vraiment spéciale! » Léa regarda le ciel d’un bleu pur et éclata de rire. Elle était heureuse d’avoir vécu une aventure aussi unique, même si elle préférait maintenant laisser cette magnifique statue là où elle devait être. Et quant à la mystérieuse corde de laine pure… personne ne sut jamais pourquoi elle était là!"
+    }
+]

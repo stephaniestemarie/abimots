@@ -129,33 +129,5 @@
             { "id": 15, "mot": "regard" }
        ],
        "histoire":"Un matin, pendant une promenade avec sa classe, Léa aperçut quelque chose de magnifique au milieu du parc. C’était une grande statue représentant un mouton avec un drôle de sourire. Autour de son cou pendait une corde faite de laine blanche et pure. Intriguée, Léa s’approcha et découvrit un petit message : « Celui qui réussira à me ramener à l’école pourra élire le prochain gardien de la statue! » Léa était certaine d’avoir trouvé un trésor unique. Mais Hugo, son meilleur ami, se mit en colère. Il voulait lui aussi être le premier à rapporter la statue! De retour en classe, leur enseignante leur demanda de s’asseoir à leur pupitre. Elle ouvrit un livre à un nouveau chapitre et leur expliqua que la statue appartenait au parc. Il fallait donc la ramener exactement où ils l’avaient trouvée. Léa et Hugo décidèrent alors de refaire le chemin ensemble. Une fois la statue remise à sa place, Hugo retrouva son sourire. « Finalement, dit-il, notre promenade était vraiment spéciale! » Léa regarda le ciel d’un bleu pur et éclata de rire. Elle était heureuse d’avoir vécu une aventure aussi unique, même si elle préférait maintenant laisser cette magnifique statue là où elle devait être. Et quant à la mystérieuse corde de laine pure… personne ne sut jamais pourquoi elle était là!"
-    },
-
-    {
-       "semaineId": 7,
-       "liste": [
-            { "id": 1, "mot": "amusant"},
-            { "id": 2, "mot": "amusante" },
-            { "id": 3, "mot": "biscuit" },
-            { "id": 4, "mot": "content" },
-            { "id": 5, "mot": "contente" },
-            { "id": 6, "mot": "debout" },
-            { "id": 7, "mot": "début" },
-            { "id": 8, "mot": "débuter" },
-            { "id": 9, "mot": "différent" },
-            { "id": 10, "mot": "différente" },
-            { "id": 11, "mot": "endroit" },
-            { "id": 12, "mot": "front" },
-            { "id": 13, "mot": "soldat" },
-            { "id": 14, "mot": "soldate" },
-            { "id": 15, "mot": "sort" },
-            { "id": 16, "mot": "suivant" },
-            { "id": 17, "mot": "suivante" },
-            { "id": 18, "mot": "toit" },
-            { "id": 19, "mot": "tout" },
-            { "id": 20, "mot": "vivant" },
-            { "id": 21, "mot": "vivante" }
-       ],
-       "histoire":"Un matin, pendant une promenade avec sa classe, Léa aperçut quelque chose de magnifique au milieu du parc. C’était une grande statue représentant un mouton avec un drôle de sourire. Autour de son cou pendait une corde faite de laine blanche et pure. Intriguée, Léa s’approcha et découvrit un petit message : « Celui qui réussira à me ramener à l’école pourra élire le prochain gardien de la statue! » Léa était certaine d’avoir trouvé un trésor unique. Mais Hugo, son meilleur ami, se mit en colère. Il voulait lui aussi être le premier à rapporter la statue! De retour en classe, leur enseignante leur demanda de s’asseoir à leur pupitre. Elle ouvrit un livre à un nouveau chapitre et leur expliqua que la statue appartenait au parc. Il fallait donc la ramener exactement où ils l’avaient trouvée. Léa et Hugo décidèrent alors de refaire le chemin ensemble. Une fois la statue remise à sa place, Hugo retrouva son sourire. « Finalement, dit-il, notre promenade était vraiment spéciale! » Léa regarda le ciel d’un bleu pur et éclata de rire. Elle était heureuse d’avoir vécu une aventure aussi unique, même si elle préférait maintenant laisser cette magnifique statue là où elle devait être. Et quant à la mystérieuse corde de laine pure… personne ne sut jamais pourquoi elle était là!"
     }
 ]

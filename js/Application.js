@@ -2,11 +2,12 @@
 
 class Application {
 
-    // annee = 0;
-    // semaine = 0;
-    // jeux = [];
-    // score = new Map()
-    
+    annee = 0;
+    semaine = 0;
+    jeux = [];
+    score = new Map();
+    ecranJeu = document.getElementById("accueil"); 
+    database = new Object();
 
 
     constructor() {
@@ -53,45 +54,162 @@ class Application {
 
     // Faire écran d'accueil
 
+    faireEcranSemaine() {
+        console.log(`Faire Écran semaine`)
+
+        let txt =`
+            <div class="grid h-[25dvh] grid-cols-6 grid-rows-1 p-4">
+
+                <div class="col-span-5 bg-red-500 flex items-center justify-center">
+                <h1 class="text-center text-3xl font-bold">Semaine</h1>
+                </div>
+
+                <a class="col-span-1 bg-gray-900 p-5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110" href="../../index.html">
+                <h1 class="text-white text-center text-3xl font-bold">Retour</h1>
+                </a>
+            
+            </div>
+            
+            <div class="grid h-screen grid-cols-6 grid-rows-4 gap-5 p-4">  
+
+        `
+        this.database.forEach((semaine, index) => {
+
+            txt += `
+                <a
+                    class="bg-gray-400 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                    hover:brightness-110"
+                    href="./vocabulaire.html?semaineId=${semaine.semaineId}"
+                >
+                    <h2 class="text-center text-xl">
+                        Semaine ${index + 1}
+                    </h2>
+                </a>
+            `;
+
+        });
+
+        txt += `</div>`
+
+        this.ecranJeu.innerHTML = txt
+
+    }
+
     faireEcranAccueil() {
         console.log(`je suis dans faireEcranAccueil`)
-        let ecranJeu = document.getElementById("accueil"); 
-        ecranJeu.innerHTML = `
+        this.ecranJeu.innerHTML = `
             <div class="grid h-screen grid-cols-3 grid-rows-3 gap-5 p-4">
 
-                <a class="col-span-3 bg-red-500 flex items-center justify-center">
+                <a class=" col-span-3 bg-red-500 flex items-center justify-center">
                 <h1 class="text-center text-3xl font-bold">La fabrique à génie</h1>
                 </a>
 
-                <a class="bg-yellow-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="1">
+                <a class="boutonAnnee bg-yellow-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="1" >
                 <h2 class="text-center text-xl ">1ère année </h2>
                 </a>
-                <a class="bg-purple-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="2">
+                <a class="boutonAnnee bg-purple-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="2" >
                 <h2 class="text-center text-xl ">2ème année  </h2>
                 </a>
-                <a class="bg-pink-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="3">
+                <a class="boutonAnnee bg-pink-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="3"  >
                 <h2 class="text-center text-xl ">3ème année  </h2>
                 </a>
 
-                <a class="bg-orange-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="4">
+                <a class="boutonAnnee bg-orange-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="4"  >
                 <h2 class="text-center text-xl">4ème année</h2>
                 </a>
-                <a class="bg-cyan-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="5">
+                <a class="boutonAnnee bg-cyan-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="5"  >
                 <h2 class="text-center text-xl ">5ème année  </h2>
                 </a>
-                <a class="bg-lime-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="./page/jeux/semaine.html" annee="6">
-                <h2 class="text-center text-xl ">6ème année  </h2>
+                <a class="boutonAnnee bg-lime-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110"  id="6"  >
+                <h2 class="text-center text-xl ">6ème année </h2>
                 </a>
 
             </div>
         `
+
+       this.attribuerAnnee()
+
+
     }
+
+    attribuerAnnee() {
+
+        const boutons = document.querySelectorAll(".boutonAnnee");
+
+        boutons.forEach((bouton) => {
+
+            bouton.addEventListener("click", async (event) => {
+
+                const id = event.currentTarget.id;
+                this.annee = id;
+                console.log(this.annee);
+
+                switch (Number(this.annee)) {
+
+                    case 1:
+                        const dbPremiere = await fetch("./../database/dbPremiere.json");
+                        const objetPremiere = await dbPremiere.json();
+                        this.database = objetPremiere;
+                        console.log(this.database)
+                        break;
+
+                    case 2:
+                        const dbDeuxieme = await fetch("./../database/dbDeuxieme.json");
+                        const objeteuxieme = await dbDeuxieme.json();
+                        this.database = objeteuxieme;
+                        console.log(this.database)
+                        break;
+
+                    case 3:
+                        const dbTroisieme = await fetch("./../database/dbTroisieme.json");
+                        const objetTroisieme = await dbTroisieme.json();
+                        this.database = objetTroisieme;
+                        console.log(this.database)
+                        break;
+
+                    case 4:
+                        const dbQuatrieme = await fetch("./../database/dbQuatrieme.json");
+                        const objetQuatrieme = await dbQuatrieme.json();
+                        this.database = objetQuatrieme;
+                        console.log(this.database)
+
+                        break;
+
+                    case 5:
+                        const dbCinquieme = await fetch("./../database/dbCinquieme.json");
+                        const objetCinquieme = await dbCinquieme.json();
+                        this.database = objetCinquieme;
+                        console.log(this.database)
+                        break;
+
+                    case 6:
+                        const dbSixieme = await fetch("./../database/dbSixieme.json");
+                        const objetSixieme = await dbSixieme.json();
+                        this.database = objetSixieme;
+                        console.log(this.database)
+                        break;
+
+                    default:
+                        console.log("Choix inconnu");
+                }
+
+                this.faireEcranSemaine()
+
+             
+            });
+
+        });
+
+    }
+
+    
 
     // faire jeu Abimots 
     // async chargerAbimots(semaine) {
