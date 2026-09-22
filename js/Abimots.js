@@ -9,9 +9,9 @@ class Abimots {
     ecranJeu = document.getElementById("ecranJeu");   
     bonneLettre = [];
 
-    constructor(semaine) {
+    constructor(semaine, mapMots) {
         this.semaine = semaine;
-        console.log(this.semaine);
+        this.listeMots = mapMots
     }
 
     get listeMots() {
@@ -31,23 +31,35 @@ class Abimots {
     }
 
     //Charger la liste de mot de la semaine
-     async chargerListeMots() {
-        const response = await fetch("./../../database/dbQuatrieme.json");
-        const donnees = await response.json();
+    //  async chargerListeMots() {
+    //     const response = await fetch("./../../database/dbQuatrieme.json");
+    //     const donnees = await response.json();
 
-        console.log(donnees);
+    //     console.log(donnees);
 
-        const semaine1 = donnees.find(
-            element => element.semaineId === this.semaine
-        );
+    //     const semaine1 = donnees.find(
+    //         element => element.semaineId === this.semaine
+    //     );
 
-        this.listeMots = new Map(
-            semaine1.liste.map(element => [
-                element.id,
-                element.mot
-            ])
-        );
+    //     this.listeMots = new Map(
+    //         semaine1.liste.map(element => [
+    //             element.id,
+    //             element.mot
+    //         ])
+    //     );
 
+        // this.positionMots = Array.from({length: this.listeMots.size}, (_, i) => i + 1)
+        // console.log(this.positionMots);
+
+        // this.num = this.choisirNumero()
+        // this.motChoisi = this.choisirMot()
+        // console.log(this.num)
+        // console.log(this.motChoisi)
+
+    // }
+
+
+    initialiser(){
         this.positionMots = Array.from({length: this.listeMots.size}, (_, i) => i + 1)
         console.log(this.positionMots);
 
@@ -55,7 +67,6 @@ class Abimots {
         this.motChoisi = this.choisirMot()
         console.log(this.num)
         console.log(this.motChoisi)
-
     }
 
     // Choisir un nombre au hasard parmis ceux dans la liste de mot 

@@ -2,20 +2,19 @@
 
 class Application {
 
-    annee = 0;
-    semaine = 0;
-    jeux = [];
-    score = new Map();
-    ecranJeu = document.getElementById("accueil"); 
-    database = new Object();
-
-
+ 
     constructor() {
-
+        this.annee = 0;
+        this.semaine = 0;
+        this.jeu = "";
+        this.listeJeux = [];
+        this.score = new Map();
+        this.ecranJeu = document.getElementById("accueil");
+        this.database = [];
     }
 
 
-    // //set
+    //set
     // set annee(value) {
     //     this.annee = value;
     // }
@@ -32,7 +31,7 @@ class Application {
     //     this.semaine = value;
     // }
 
-    // //get
+    //get
     // get annee() {
     //     return this.annee;
     // }
@@ -53,49 +52,6 @@ class Application {
     // **************************************  FONCTIONS *************************************************
 
     // Faire écran d'accueil
-
-    faireEcranSemaine() {
-        console.log(`Faire Écran semaine`)
-
-        let txt =`
-            <div class="grid h-[25dvh] grid-cols-6 grid-rows-1 p-4">
-
-                <div class="col-span-5 bg-red-500 flex items-center justify-center">
-                <h1 class="text-center text-3xl font-bold">Semaine</h1>
-                </div>
-
-                <a class="col-span-1 bg-gray-900 p-5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                hover:brightness-110" href="../../index.html">
-                <h1 class="text-white text-center text-3xl font-bold">Retour</h1>
-                </a>
-            
-            </div>
-            
-            <div class="grid h-screen grid-cols-6 grid-rows-4 gap-5 p-4">  
-
-        `
-        this.database.forEach((semaine, index) => {
-
-            txt += `
-                <a
-                    class="bg-gray-400 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
-                    hover:brightness-110"
-                    href="./vocabulaire.html?semaineId=${semaine.semaineId}"
-                >
-                    <h2 class="text-center text-xl">
-                        Semaine ${index + 1}
-                    </h2>
-                </a>
-            `;
-
-        });
-
-        txt += `</div>`
-
-        this.ecranJeu.innerHTML = txt
-
-    }
-
     faireEcranAccueil() {
         console.log(`je suis dans faireEcranAccueil`)
         this.ecranJeu.innerHTML = `
@@ -136,16 +92,104 @@ class Application {
 
        this.attribuerAnnee()
 
+    }
+
+    //Faire écran semaine
+    faireEcranSemaine() {
+        console.log(`Faire Écran semaine`)
+
+        let txt =`
+            <div class="grid h-[25dvh] grid-cols-6 grid-rows-1 p-4">
+
+                <div class="col-span-5 bg-red-500 flex items-center justify-center">
+                <h1 class="text-center text-3xl font-bold">Semaine</h1>
+                </div>
+
+                <a class="col-span-1 bg-gray-900 p-5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110" href="../../index.html">
+                <h1 class="text-white text-center text-3xl font-bold">Retour</h1>
+                </a>
+            
+            </div>
+            
+            <div class="grid h-screen grid-cols-6 grid-rows-4 gap-5 p-4">  
+
+        `
+        this.database.forEach((semaine, index) => {
+
+            txt += `
+                <a
+                    class="bg-gray-400 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                    hover:brightness-110  boutonSemaine"  id="${index + 1}"
+                >
+                    <h2 class="text-center text-xl">
+                        Semaine ${index + 1}
+                    </h2>
+                </a>
+            `;
+
+        });
+
+        txt += `</div>`
+
+        this.ecranJeu.innerHTML = txt
+
+        this.attribuerSemaine()
 
     }
 
+    // Faire écran jeu
+    faireEcranJeux() {
+        console.log(`Faire Écran Jeux`)
+        this.ecranJeu.innerHTML = ``
+
+        let txt =`
+           <div class="grid h-[25dvh] grid-cols-6 grid-rows-1 p-4">
+
+                <div class="col-span-5 bg-red-500 flex items-center justify-center">
+                <h1 class="text-center text-3xl font-bold">Choisi ton jeu</h1>
+                </div>
+
+                <a class="col-span-1 bg-gray-900 p-5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+                hover:brightness-110" href="../../index.html">
+                <h1 class="text-white text-center text-3xl font-bold">Retour</h1>
+                </a>
+            
+            </div>
+            
+            <div class="grid h-screen grid-cols-3 grid-rows-3 gap-5 p-4">  
+        `
+        this.listeJeux.forEach((jeu) => {
+
+            txt += `
+             <a class="bg-gray-500 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl
+            hover:brightness-110 boutonJeu"  id="${jeu}">
+                 <h2 class="text-center text-xl ">${jeu}</h2>
+            </a>
+            `;
+
+            
+
+        });
+
+        txt += `</div>`
+
+        this.ecranJeu.innerHTML = txt
+
+        this.attribuerJeu()
+
+    }
+
+
+
+    //Télécharger la bonne database en fonction de l'année choisi
     attribuerAnnee() {
 
-        const boutons = document.querySelectorAll(".boutonAnnee");
+        const boutonAnnee = document.querySelectorAll(".boutonAnnee");
 
-        boutons.forEach((bouton) => {
+        boutonAnnee.forEach((boutonA) => {
 
-            bouton.addEventListener("click", async (event) => {
+            boutonA.addEventListener("click", async (event) => {
 
                 const id = event.currentTarget.id;
                 this.annee = id;
@@ -209,8 +253,83 @@ class Application {
 
     }
 
-    
 
+    //Choisir la semaine
+    attribuerSemaine() {
+        console.log(`AttribuerSemaine`)
+
+        const boutonSemaine = document.querySelectorAll(".boutonSemaine");
+
+        boutonSemaine.forEach((boutonSem) => {
+
+            boutonSem.addEventListener("click", async (event) => {
+
+                const id = event.currentTarget.id;
+                this.semaine = id;
+                console.log(this.semaine);
+
+                const semaineChoisie = this.database.find(
+                    element => element.semaineId == this.semaine
+                );
+
+                this.listeJeux = semaineChoisie.listeJeux
+                console.log(this.listeJeux);
+
+                this.faireEcranJeux()
+             
+            });
+
+        });
+
+    }
+
+    attribuerJeu() {
+        console.log(`Attribuer le jeu`)
+
+        const boutonJeux = document.querySelectorAll(".boutonJeu");
+
+        boutonJeux.forEach((boutonJ) => {
+
+            boutonJ.addEventListener("click", async (event) => {
+
+                this.jeu = event.currentTarget.id;
+                console.log(this.jeu);
+
+                
+                this.demarerJeu()
+
+             
+            });
+
+        });
+
+    }
+
+    demarerJeu() {
+        console.log(`Démarrer le jeu`)
+
+        switch (this.jeu) {
+
+                    case "Abimot":
+                        window.location.href = "./jeux/vocabulaire.html";
+                        break;
+
+                    case "ZachaLire":
+                        console.log("Je démarre ZachaLire")
+                        break;
+
+                    case "LéléMath":                       
+                        console.log("Je démarre LéléMath")
+                        break;                    
+
+                    default:
+                        console.log("Erreur fonction demarerJeu");
+                }
+
+
+    }
+
+    
     // faire jeu Abimots 
     // async chargerAbimots(semaine) {
     //     const Abimot = new Abimots(semaine);
