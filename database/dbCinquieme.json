@@ -2,6 +2,7 @@
     
     {
        "semaineId": 1,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 1", "db5"],
        "liste": [
             { "id": 1, "mot": "bol"},
             { "id": 2, "mot": "défi" },
@@ -24,6 +25,7 @@
 
     {
        "semaineId": 2,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 2", "db5"],
        "liste": [
             { "id": 1, "mot": "boule"},
             { "id": 2, "mot": "envie" },
@@ -43,6 +45,7 @@
 
     {
        "semaineId": 3,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 3", "db5"],
        "liste": [
             { "id": 1, "mot": "aide"},
             { "id": 2, "mot": "aucun" },
@@ -65,6 +68,7 @@
 
      {
        "semaineId": 4,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 4", "db5"],
        "liste": [
             { "id": 1, "mot": "chapitre"},
             { "id": 2, "mot": "colère" },
@@ -87,6 +91,7 @@
 
     {
        "semaineId": 5,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 5", "db5"],
        "liste": [
             { "id": 1, "mot": "aventure"},
             { "id": 2, "mot": "bizarre" },

@@ -2,6 +2,7 @@
     
     {
        "semaineId": 1,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 1", "db2"],
        "liste": [
             { "id": 1, "mot": "bol"},
             { "id": 2, "mot": "défi" },
@@ -24,6 +25,7 @@
 
     {
        "semaineId": 2,
+       "listeJeux": ["Abimot", "ZachaLire", "LéléMath", "semaine 2", "db2"],
        "liste": [
             { "id": 1, "mot": "boule"},
             { "id": 2, "mot": "envie" },
