@@ -305,13 +305,33 @@ class Application {
 
     }
 
+    creerMapMot(){
+
+        const listeMotSemaine = this.database.find(
+            element => element.semaineId == this.semaine
+        );
+
+        let mapMotSemaine = new Map(
+            listeMotSemaine.liste.map(element => [
+                element.id,
+                element.mot
+            ])
+        );
+        console.log(mapMotSemaine);
+        return mapMotSemaine;
+
+    }
+
     demarerJeu() {
         console.log(`Démarrer le jeu`)
 
         switch (this.jeu) {
 
                     case "Abimot":
-                        window.location.href = "./jeux/vocabulaire.html";
+                        const listeMotSemaine = this.creerMapMot()
+                        const Abimot = new Abimots(this.semaine, listeMotSemaine);
+                        Abimot.demarrerJeu()
+                        // window.location.href = "./jeux/vocabulaire.html";
                         break;
 
                     case "ZachaLire":
@@ -330,13 +350,6 @@ class Application {
     }
 
     
-    // faire jeu Abimots 
-    // async chargerAbimots(semaine) {
-    //     const Abimot = new Abimots(semaine);
-    //     await Abimot.chargerListeMots()
-    //     Abimot.faireEcranJeu() 
-        
-    // }
-
+   
 
 }
