@@ -8,6 +8,8 @@ class Abimots {
     motChoisi = "soleil";
     ecranJeu = document.getElementById("accueil");  
     bonneLettre = [];
+    score = 0
+    scoreFinal = 3
 
     constructor(semaine, mapMots) {
         this.semaine = semaine;
@@ -258,7 +260,7 @@ class Abimots {
                                         <img class="w-[100px] h-[100px]" src="../../image/oups.png" alt="oups" srcset="">
                                     </div>`;
                                     setTimeout(() => {
-                                        window.location.href = "../selectionJeux.html";
+                                        // Retourner dans l'application
                                 }, 2000);
                             }
 

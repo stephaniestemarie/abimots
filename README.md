@@ -26,3 +26,17 @@ Liste de mots tests
             { "id": 22, "mot": "grange" },
             { "id": 23, "mot": "gorge" }
        ],
+
+            { "id": 3, "mot": "or" },
+            { "id": 4, "mot": "parmi" },
+            { "id": 5, "mot": "partir" },
+            { "id": 6, "mot": "sol" },
+            { "id": 7, "mot": "sud" },
+            { "id": 8, "mot": "bon" },
+            { "id": 9, "mot": "dragon" },
+            { "id": 10, "mot": "pardon" },
+            { "id": 11, "mot": "retour" },
+            { "id": 12, "mot": "salon" },
+            { "id": 13, "mot": "selon" },
+            { "id": 14, "mot": "sinon" },
+            { "id": 15, "mot": "tour" }
